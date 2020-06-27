@@ -7,6 +7,7 @@
             <div class="col-md-8 mx-auto">
                 <h2>My プロフィール編集画面</h2>
                 <form action="{{ action('Admin\ProfileController@update') }}" method="post" enctype="multipart/form-data">
+                    {{-- 次のように追記 --}}
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
