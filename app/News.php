@@ -13,7 +13,6 @@ class News extends Model
         'body' => 'required',
     );
 
-    // Newsモデルに関連付けを行う
     public function histories()
     {
         return $this->hasMany('App\History');

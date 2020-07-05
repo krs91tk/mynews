@@ -52,10 +52,8 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        // Validationを行う
         $this->validate($request, Profile::$rules);
 
-        // 既存のプロフィールデータを削除
         Profile::truncate();
 
         $profile = new Profile;
@@ -71,9 +69,7 @@ class ProfileController extends Controller
 
     public function delete(Request $request)
     {
-        // 該当するNews Modelを取得
         $profile = Profile::find($request->id);
-        // 削除する
         $profile->delete();
         return redirect('admin/profile/');
     }

@@ -11,14 +11,13 @@ class CreateNewsTable extends Migration
      *
      * @return void
      */
-    // title と body と image_path を追記
     public function up()
     {
         Schema::create('news', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title'); // ニュースのタイトルを保存するカラム
-            $table->string('body');  // ニュースの本文を保存するカラム
-            $table->string('image_path')->nullable();  // 画像のパスを保存するカラム
+            $table->string('title');
+            $table->string('body');
+            $table->string('image_path')->nullable();
             $table->timestamps();
         });
     }
