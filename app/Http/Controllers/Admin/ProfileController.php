@@ -52,7 +52,7 @@ class ProfileController extends Controller
 
     public function update(Request $request)
     {
-        // Varidationを行う
+        // Validationを行う
         $this->validate($request, Profile::$rules);
 
         // 既存のプロフィールデータを削除
@@ -63,7 +63,7 @@ class ProfileController extends Controller
 
         unset($form['_token']);
 
-        $profile->fill($form);
+        $plofile->fill($form);
         $profile->save();
 
         return redirect('admin/profile');
