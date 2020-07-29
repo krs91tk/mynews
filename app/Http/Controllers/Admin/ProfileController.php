@@ -17,16 +17,13 @@ class ProfileController extends Controller
     public function create(Request $request)
     {
         $this->validate($request, Profile::$rules);
-
         $profile = new Profile;
         $form = $request->all();
 
         unset($form['_token']);
 
-
         $profile->fill($form);
         $profile->save();
-
         return redirect('admin/profile');
     }
 
@@ -61,7 +58,7 @@ class ProfileController extends Controller
 
         unset($form['_token']);
 
-        $plofile->fill($form);
+        $profile->fill($form);
         $profile->save();
 
         return redirect('admin/profile');
